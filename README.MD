@@ -20,7 +20,6 @@
 Конфигурация сервиса находится в файлу `config.yml`
 Для запуска сервиса локально достаточно выполнить команды:
 
-    rm -r input
     rm -r output
     docker-compose up
     go mod download
