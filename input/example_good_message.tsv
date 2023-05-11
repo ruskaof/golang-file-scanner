@@ -1,0 +1,5 @@
+1	devices/sensor1	G-044322	01749246-95f6-57db-b7c3-2ae0e8be671f	cold7_Defrost_status	Разморозка	example_environment	waiting	100	LOCAL	cold7_status.Defrost_status	FALSE	EXAMPLE_TYPE_1	4	FALSE
+2	devices/sensor2	G-044322	01749246-95f6-57db-b7c3-2ae0e8be671f	cold7_VentSK_status	Вентилятор	example_environment	working	100	LOCAL	cold7_status.VentSK_status	FALSE	EXAMPLE_TYPE_2	1	TRUE
+3	devices/sensor1	G-044322	01749246-95f6-57db-b7c3-2ae0e8be671f	cold7_ComprSK_status	Компрессор	example_environment2	working	100	LOCAL	cold7_status.ComprSK_status	TRUE	EXAMPLE_TYPE_1	2	TRUE
+4	devices/sensor2	G-044322	01749246-95f6-57db-b7c3-2ae0e8be671f	cold7_Temp_Al_HH	Высокая температура	example_environment	alarm	100	LOCAL	cold7_status.Temp_Al_HH	FALSE	EXAMPLE_TYPE_1	1	FALSE
+5	devices/sensor2	G-044325	01749246-9617-585e-9e19-157ccad61ee2	cold78_Defrost_status	Разморозка	example_environment3	waiting	100	LOCAL	cold78_status.Defrost_status	FALSE	EXAMPLE_TYPE_1	1	FALSE

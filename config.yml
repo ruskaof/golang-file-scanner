@@ -1,0 +1,20 @@
+database:
+  name: app_db
+  host: localhost
+  port: 5432
+  username: postgres
+  password: password
+
+rabbit:
+  host: localhost
+  port: 5672
+  username: rabbit
+  password: password
+  queue: main
+
+files:
+  input: ./input
+  preprocessed: ./output
+
+kafka:
+

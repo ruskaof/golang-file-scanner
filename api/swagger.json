@@ -1,0 +1,175 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "The purpose of this API is to provide information over the devices stored in app_db.devices table",
+    "title": "Biocad task api b",
+    "contact": {
+      "name": "Dmitrii Rusinov",
+      "email": "199-41@mail.ru"
+    },
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/messages/{unit_guid}": {
+      "get": {
+        "description": "This will return all messages associated with the given unit GUID.",
+        "tags": [
+          "messages"
+        ],
+        "summary": "Get messages by unit GUID.",
+        "operationId": "getMessages",
+        "parameters": [
+          {
+            "type": "string",
+            "x-go-name": "UnitGuid",
+            "description": "The GUID of the unit to get messages for",
+            "name": "unit_guid",
+            "in": "path",
+            "required": true
+          },
+          {
+            "type": "integer",
+            "format": "int64",
+            "x-go-name": "Page",
+            "description": "The page number to retrieve",
+            "name": "page",
+            "in": "query",
+            "required": true
+          },
+          {
+            "type": "integer",
+            "format": "int64",
+            "x-go-name": "Limit",
+            "description": "The maximum number of messages to retrieve per page",
+            "name": "limit",
+            "in": "query",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "DeviceDto",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/DeviceDto"
+              }
+            }
+          },
+          "400": {
+            "description": "BadRequestError",
+            "schema": {
+              "$ref": "#/definitions/BadRequestError"
+            }
+          },
+          "500": {
+            "description": "InternalServerError",
+            "schema": {
+              "$ref": "#/definitions/InternalServerError"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "BadRequestError": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "description": "A short error code or description",
+          "type": "string",
+          "x-go-name": "Message",
+          "example": "Invalid parameter"
+        }
+      },
+      "x-go-package": "biocadTask/internal/web"
+    },
+    "DeviceDto": {
+      "type": "object",
+      "properties": {
+        "addr": {
+          "type": "string",
+          "x-go-name": "Addr"
+        },
+        "area": {
+          "type": "string",
+          "x-go-name": "Area"
+        },
+        "bit": {
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "Bit"
+        },
+        "block": {
+          "type": "boolean",
+          "x-go-name": "Block"
+        },
+        "class": {
+          "type": "string",
+          "x-go-name": "Class"
+        },
+        "context": {
+          "type": "string",
+          "x-go-name": "Context"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "ID"
+        },
+        "invertBit": {
+          "type": "boolean",
+          "x-go-name": "InvertBit"
+        },
+        "invid": {
+          "type": "string",
+          "x-go-name": "Invid"
+        },
+        "level": {
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "Level"
+        },
+        "mqtt": {
+          "type": "string",
+          "x-go-name": "Mqtt"
+        },
+        "msgID": {
+          "type": "string",
+          "x-go-name": "MsgID"
+        },
+        "num": {
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "Num"
+        },
+        "text": {
+          "type": "string",
+          "x-go-name": "Text"
+        },
+        "type": {
+          "type": "string",
+          "x-go-name": "Type"
+        },
+        "unitGUID": {
+          "type": "string",
+          "x-go-name": "UnitGUID"
+        }
+      },
+      "x-go-package": "biocadTask/internal/web"
+    },
+    "InternalServerError": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "description": "A short error code or description",
+          "type": "string",
+          "x-go-name": "Message",
+          "example": "Server error"
+        }
+      },
+      "x-go-package": "biocadTask/internal/web"
+    }
+  }
+}
